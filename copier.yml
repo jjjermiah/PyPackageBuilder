@@ -1,5 +1,7 @@
+---
 # Copier Settings for the project
 !include copier-settings.yml
+---
 
 author_full_name:
   type: str
