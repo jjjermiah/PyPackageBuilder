@@ -2,6 +2,13 @@
 
 
 
+## v0.3.0 (2024-05-20)
+
+### Feature
+
+* feat: add pre-commit ([`72c9b7b`](https://github.com/jjjermiah/PyPackageBuilder/commit/72c9b7ba7cc96fbd71082be00bff353c09cd9589))
+
+
 ## v0.2.0 (2024-05-20)
 
 ### Feature
