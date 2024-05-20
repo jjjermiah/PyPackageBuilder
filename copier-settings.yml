@@ -1,0 +1,46 @@
+
+_answers_file: .pypackage-builder-answers.yml
+
+_exclude:
+  - includes
+  - test
+
+_templates_suffix: .jinja
+
+_subdirectory: PACKAGE_TEMPLATE
+
+_tasks:
+  # {{ pixi_install_envs }} is a list of strings
+  - >-
+    {% if pixi_install %}
+      {% for env in pixi_install_envs %}
+        {% if env == 'default' %}
+          pixi install
+        {% else %}
+          pixi install -e {{ env }}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  - >-
+    {% if git_init %}
+    echo "Initializing a git repository..."
+    {% endif %}
+
+
+_message_before_copy: |
+  Thanks for generating a project using our template.
+
+  You'll be asked a series of questions whose answers will be used to
+  generate a tailored project for you.
+  
+_message_after_copy: |
+    Your project "{{ project_name }}" has been created successfully!
+
+    Next steps:
+
+    1. Change directory to the project root:
+
+       $ cd {{ _copier_conf.dst_path }}
+
+    2. Read "CONTRIBUING.md" and start coding.
+

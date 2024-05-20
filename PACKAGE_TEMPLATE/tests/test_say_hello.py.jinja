@@ -1,0 +1,13 @@
+import pytest
+from {{ package_name }} import main
+
+
+def test_say_hello():
+    assert main() == (
+        "Hello, [bold magenta]World[/bold magenta]!",
+        ":vampire:",
+    )
+
+
+if __name__ == "__main__":
+    pytest.main()

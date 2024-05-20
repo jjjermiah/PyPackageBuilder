@@ -1,0 +1,10 @@
+
+[version]
+path = "src/{{ package_name }}/__init__.py"
+
+[build]
+directory = "dist"
+
+[build.targets]
+wheel = { packages = ["src/{{ package_name }}"] }
+

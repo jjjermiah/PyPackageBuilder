@@ -1,0 +1,14 @@
+[project]
+name = "PyPackage-Builder"
+version = "0.1.0"
+description = "A simple package builder for python packages managed by Pixi"
+authors = ["Jermiah Joseph <jermiahjoseph98@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tasks]
+
+[dependencies]
+copier = ">=9.2.0,<9.3"
