@@ -1,7 +1,6 @@
 ---
 # Copier Settings for the project
 !include copier-settings.yml
----
 
 author_full_name:
   type: str
@@ -100,13 +99,11 @@ pixi_install:
 
 pixi_install_envs:
   type: str
-  help: List of environments to install. 
+  help: List of environments to install.
   multiselect: true
-  choices:  
+  choices:
     - default
     - dev
     - release
   default : ["default"]
   when: "{{ pixi_install == true }}"
-
-
