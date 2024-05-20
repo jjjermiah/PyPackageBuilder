@@ -2,6 +2,13 @@
 
 
 
+## v0.3.2 (2024-05-20)
+
+### Fix
+
+* fix: yaml mistake ([`2a246c9`](https://github.com/jjjermiah/PyPackageBuilder/commit/2a246c9cb089b78c63c0c7119b3226a5963c7f67))
+
+
 ## v0.3.1 (2024-05-20)
 
 ### Fix
