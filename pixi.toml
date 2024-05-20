@@ -28,3 +28,4 @@ python-semantic-release = ">=9.7.3,<9.8"
 
 [feature.release.tasks]
 semver = 'echo "Next Version is: $(semantic-release -c releaserc.toml version --print)"'
+release = "semantic-release -c releaserc.toml version"
