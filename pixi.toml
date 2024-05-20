@@ -1,6 +1,6 @@
 [project]
 name = "PyPackage-Builder"
-version = "0.3.2"
+version = "0.3.3"
 description = "A simple package builder for python packages managed by Pixi"
 authors = ["Jermiah Joseph <jermiahjoseph98@gmail.com>"]
 license = "MIT"

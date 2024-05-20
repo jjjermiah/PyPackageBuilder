@@ -2,6 +2,16 @@
 
 
 
+## v0.3.3 (2024-05-20)
+
+### Fix
+
+* fix: Update .gitignore to include new files and directories for coverage reports,
+  and environment configuration. Add coverage-report, recipe.yaml, .ruff_cache, ([`a21f9c3`](https://github.com/jjjermiah/PyPackageBuilder/commit/a21f9c3c6c7ac8a948598d5cb0402e55a03f5fef))
+
+* fix: small error ([`779ab9b`](https://github.com/jjjermiah/PyPackageBuilder/commit/779ab9b54b7a00ad8e05dd547f4901ac2aa74a2c))
+
+
 ## v0.3.2 (2024-05-20)
 
 ### Fix
