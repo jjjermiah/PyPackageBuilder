@@ -1,10 +1,20 @@
 # CHANGELOG
 
+
+
+## v0.3.1 (2024-05-20)
+
+### Fix
+
+* fix: trying ([`5009cee`](https://github.com/jjjermiah/PyPackageBuilder/commit/5009ceef345d95173b2b44531fdd472c4c734718))
+
+
 ## v0.3.0 (2024-05-20)
 
 ### Feature
 
 * feat: add pre-commit ([`72c9b7b`](https://github.com/jjjermiah/PyPackageBuilder/commit/72c9b7ba7cc96fbd71082be00bff353c09cd9589))
+
 
 ## v0.2.0 (2024-05-20)
 
@@ -24,11 +34,13 @@
 
 * fix: remove ci steps ([`fe91c82`](https://github.com/jjjermiah/PyPackageBuilder/commit/fe91c82cd62a89b7e1ff72d1317746564ddcff5b))
 
+
 ## v0.1.1 (2024-05-19)
 
 ### Test
 
 * test: update ([`6186d70`](https://github.com/jjjermiah/PyPackageBuilder/commit/6186d70adc89cd4ab50e7e36d344697be81907dd))
+
 
 ## v0.1.0 (2024-05-19)
 
