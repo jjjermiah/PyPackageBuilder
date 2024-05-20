@@ -1,0 +1,130 @@
+name: CI-CD
+
+# only run on pushes to main or pull requests
+on:
+  push:
+    # push to any branch *
+    branches: [main]
+  pull_request:
+    branches: [main, development]
+
+jobs:
+  ################################################################################################
+  # Unit-Tests: Run unit tests using pytest
+  ################################################################################################
+  Unit-Tests:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15 # Consider increasing timeout
+    env:
+      PIXI_ENV: "dev"
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        # os: [ubuntu-latest, macos-latest, macos-14, windows-latest]
+        # python-version: ["3.12", "3.11", "3.10"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Pixi
+        uses: prefix-dev/setup-pixi@v0.7.0
+        with:
+          environments: ${{ env.PIXI_ENV }}
+          pixi-version: v0.22.0
+          cache: false
+          # cache-key: pixi-ENV_${{ env.PIXI_ENV }}-
+
+      - name: Run pytest
+        run: |
+          pixi run which python
+          pixi run test
+
+      - name: Upload coverage report artifact to be used by Codecov
+        # only upload if matrix.os is ubuntu-latest and matrix.python-version is 3.12
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: coverage-report
+
+  ################################################################################################
+  # Ruff: Run ruff linter
+  ################################################################################################
+  Ruff:
+    runs-on: ubuntu-latest
+    env:
+      PIXI_ENV: "dev"
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Pixi
+        uses: prefix-dev/setup-pixi@v0.7.0
+        with:
+          environments: ${{ env.PIXI_ENV }}
+          pixi-version: v0.22.0
+          cache: false
+          # cache-key: pixi-ENV_${{ env.PIXI_ENV }}-
+
+      - name: Run Ruff
+        run: pixi run style
+
+  ################################################################################################
+  # Semantic-Release: Run semantic-release to automate versioning and publishing
+  ################################################################################################
+  Semantic-Release:
+    permissions:
+      # Read releases read-all
+      contents: write
+      packages: write
+      issues: write
+      pull-requests: write
+
+    needs: [Unit-Tests, Ruff, Docs]
+
+    # if pulling to main, deploy to PyPI
+    if: github.ref == 'refs/heads/main'
+
+    env:
+      PIXI_ENV: "publish"
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.12"]
+
+    # Set up operating system
+    runs-on: ${{ matrix.os }}
+
+    # Concurrency is for preventing multiple runs of the same workflow
+    concurrency: release
+
+    outputs:
+      released: ${{ steps.release.outputs.released }}
+      version: ${{ steps.release.outputs.version }}
+      tag: ${{ steps.release.outputs.tag }}
+
+    # Define job steps
+    steps:
+      - name: Check-out repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install Pixi
+        uses: prefix-dev/setup-pixi@v0.7.0
+        env:
+          RUNNER_DEBUG: true
+        with:
+          environments: ${{ env.PIXI_ENV }}
+          pixi-version: v0.22.0
+          cache: false
+          # cache-key: pixi-ENV_${{ env.PIXI_ENV }}-
+
+      - name: Run semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        id: release
+        run: pixi run release

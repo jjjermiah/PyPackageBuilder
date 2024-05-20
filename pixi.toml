@@ -10,5 +10,18 @@ platforms = ["osx-arm64"]
 
 [tasks]
 
+[environments]
+dev = { features = ["lint"] }
+publish = { features = ["release"] }
+
 [dependencies]
 copier = ">=9.2.0,<9.3"
+
+[feature.lint.dependencies]
+ruff = ">=0.4.4,<0.5"
+
+[feature.release.dependencies]
+python-semantic-release = ">=9.7.3,<9.8"
+
+[feature.release.tasks]
+semver = 'echo "Next Version is: $(semantic-release -c releaserc.toml version --print)"'
