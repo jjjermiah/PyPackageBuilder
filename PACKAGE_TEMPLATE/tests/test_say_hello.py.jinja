@@ -1,11 +1,10 @@
 import pytest
-from {{ package_name }} import main
+from {{ package_name }}.main import hello
 
 
 def test_say_hello():
-    assert main() == (
-        "Hello, [bold magenta]World[/bold magenta]!",
-        ":vampire:",
+    assert hello() == (
+        "Hello from {{ package_name }}, [bold magenta]World[/bold magenta]!", ":vampire:"
     )
 
 
