@@ -16,7 +16,7 @@ prerelease = true
 
 [semantic_release.changelog]
 template_dir = "templates"
-changelog_file = "docs/CHANGELOG.md"
+changelog_file = "CHANGELOG.md"
 exclude_commit_patterns = []
 
 [semantic_release.changelog.environment]
@@ -62,5 +62,4 @@ ignore_token_for_push = false
 insecure = false
 
 [semantic_release.publish]
-dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
