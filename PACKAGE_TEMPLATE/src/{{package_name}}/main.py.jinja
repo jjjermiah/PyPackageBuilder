@@ -1,4 +1,4 @@
-from rich import print
+from rich import print as rprint
 
 
 def hello() -> tuple[str, str]:
@@ -8,7 +8,7 @@ def hello() -> tuple[str, str]:
 
 def main() -> None:
     """Print a greeting message and an emoji."""
-    print(*hello())
+    rprint(*hello())
 
 if __name__ == "__main__":
   main()

@@ -12,6 +12,10 @@ _subdirectory: PACKAGE_TEMPLATE
 _tasks:
   # {{ pixi_install_envs }} is a list of strings
   - >-
+    {% if git_init %}
+    echo "Initializing a git repository..." && git init
+    {% endif %}
+  - >-
     {% if pixi_install %}
       {% for env in pixi_install_envs %}
         {% if env == 'default' %}
@@ -20,10 +24,6 @@ _tasks:
           pixi install -e {{ env }}
         {% endif %}
       {% endfor %}
-    {% endif %}
-  - >-
-    {% if git_init %}
-    echo "Initializing a git repository..."
     {% endif %}
 
 
@@ -42,4 +42,6 @@ _message_after_copy: |
 
        $ cd {{ _copier_conf.dst_path }}
 
-    2. Read "CONTRIBUING.md" and start coding.
+    2. Enter the `dev` environment:
+  
+       $ pixi shell -e dev 
