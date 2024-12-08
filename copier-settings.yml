@@ -25,6 +25,11 @@ _tasks:
         {% endif %}
       {% endfor %}
     {% endif %}
+  - >- 
+    {% if git_init %}
+      git add . && git commit -m "Initial commit"
+    {% endif %}
+
 
 
 _message_before_copy: |
