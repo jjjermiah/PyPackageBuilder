@@ -2,6 +2,13 @@
 
 
 
+## v0.6.0 (2024-12-08)
+
+### Feature
+
+* feat: update README template to include Python version badge and remove outdated GitHub stats ([`ec2891e`](https://github.com/jjjermiah/PyPackageBuilder/commit/ec2891ea40e56f5b2c4424ccc3a796ec28538641))
+
+
 ## v0.5.0 (2024-12-08)
 
 ### Feature
