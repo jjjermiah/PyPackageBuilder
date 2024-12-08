@@ -14,6 +14,9 @@ extend-exclude = [
   "tests/*",    # Skip test files
 ]
 
+# Set the ruff cache directory
+cache-dir = ".cache/ruff"
+
 ###########################################################################
 # RUFF LINTING
 # https://docs.astral.sh/ruff/linter/
@@ -51,6 +54,12 @@ select = [
   "T20",  # Catches print statements that should be proper logging calls
   # https://docs.astral.sh/ruff/rules/#flake8-errmsg-em
   "EM",   # Ensures exception messages are properly formatted
+  # https://docs.astral.sh/ruff/rules/#tryceratops-try
+  "TRY",  # Prevent try-except handling antipatterns https://blog.guilatrova.dev/handling-exceptions-in-python-like-a-pro
+  # https://docs.astral.sh/ruff/rules/#refurb-furb
+  "FURB",  # refurbish and modernize codebases
+  # https://docs.astral.sh/ruff/rules/#pandas-vet-pd
+  "PD",   # opinionated pandas code linting
 
   ###########################################################################
   # STANDARDS & STYLE
@@ -67,7 +76,6 @@ select = [
 ]
 
 ignore = [
-  "ANN101",  # Allows skipping type annotations for self in methods
   "PLR0913", # Permits functions with many arguments when necessary
   "D100",    # Allows modules without docstrings
   # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
