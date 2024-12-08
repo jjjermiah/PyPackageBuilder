@@ -10,6 +10,9 @@ exclude = tests
 # This ensures mypy uses the correct Python version's type system
 python_version = {{ python_version }}
 
+# Set the cache directory
+cache_dir = .cache/mypy
+
 # Warn when returning Any from a function with a non-Any return type
 # Helps maintain type safety by catching implicit Any returns
 warn_return_any = True
