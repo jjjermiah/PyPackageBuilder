@@ -1,2 +1,6 @@
 # GitHub syntax highlighting
 pixi.lock linguist-language=YAML
+*.py.jinja linguist-language=Python
+*.toml.jinja linguist-language=TOML
+*.md.jinja linguist-language=Markdown
+*.yaml.jinja linguist-language=YAML
