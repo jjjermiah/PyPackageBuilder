@@ -2,6 +2,35 @@
 
 
 
+## v0.4.0 (2024-12-08)
+
+### Chore
+
+* chore: restructure ([`cc5629d`](https://github.com/jjjermiah/PyPackageBuilder/commit/cc5629dd7c1fb4c0a6914dde2c4239b7324372d4))
+
+### Feature
+
+* feat: enhance syntax highlighting for Jinja files in .gitattributes ([`b690fea`](https://github.com/jjjermiah/PyPackageBuilder/commit/b690feaa4d46d4ff73ac90ad67e41df7c2b3e778))
+
+* feat: set cache directory for mypy to improve performance ([`b603bab`](https://github.com/jjjermiah/PyPackageBuilder/commit/b603babdf0e86a0aebbdc3b37378f3c645c3b5cd))
+
+* feat: update ruff configuration to set cache directory and enhance linting rules ([`fcff9df`](https://github.com/jjjermiah/PyPackageBuilder/commit/fcff9dfbd3a57b052b7b5396fd5ca788f1476331))
+
+* feat: add test for main function and update hello test ([`8704edd`](https://github.com/jjjermiah/PyPackageBuilder/commit/8704eddc779b7285f2f01067cb6944b1397522e2))
+
+* feat: add badges to README template for enhanced project visibility ([`cb67b96`](https://github.com/jjjermiah/PyPackageBuilder/commit/cb67b96732f46a13aa42017c4b3bd380fa636202))
+
+* feat: add GitHub Actions workflow for updating pixi lockfiles ([`4c832a7`](https://github.com/jjjermiah/PyPackageBuilder/commit/4c832a719880deb69274f68f945b2a7a0537a073))
+
+* feat: add git initialization task and update instructions for entering dev environment ([`7367735`](https://github.com/jjjermiah/PyPackageBuilder/commit/736773525e6e18778f9163a13c7dddb0a3913a41))
+
+* feat: big update to structure and format ([`3b0caca`](https://github.com/jjjermiah/PyPackageBuilder/commit/3b0caca9337c8e34aba271b51c348550cf6bbb49))
+
+### Unknown
+
+* feature: big refactor to overhaul the structure and configurations ([`e77634a`](https://github.com/jjjermiah/PyPackageBuilder/commit/e77634a649d18e1df777d274817385331f4e93aa))
+
+
 ## v0.3.3 (2024-05-20)
 
 ### Fix
