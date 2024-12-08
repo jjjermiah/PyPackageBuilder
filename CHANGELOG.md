@@ -2,6 +2,13 @@
 
 
 
+## v0.5.0 (2024-12-08)
+
+### Feature
+
+* feat: add initial commit command to copier-settings.yml ([`48fb0c7`](https://github.com/jjjermiah/PyPackageBuilder/commit/48fb0c75d7b6139b8a00bfb3dac031a99af77fad))
+
+
 ## v0.4.0 (2024-12-08)
 
 ### Chore
